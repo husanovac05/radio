@@ -1,0 +1,77 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+span, a, label{
+    display: inline-block;
+}
+.box{
+background-color: black;
+padding: 150px;
+
+}
+.label{
+    display: inline-flex;
+    align-items: center;
+}
+.title{
+    font-size: 21px;
+}
+.input{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    margin: -1px;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+}
+.form{
+   margin: 40px auto;
+   color: aliceblue;
+   padding: 40px;
+   max-width: 400px;
+}
+.big{
+    background-color: darkblue;
+    margin-top: 12px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid rgb(10, 31, 216);
+    
+}
+.fakeinput{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: 0.6s all linear;
+    margin-right: 10px;
+    position: relative;
+    border: 2px solid rgb(56, 56, 255);
+}
+.fakeinput::before{
+    content: '';
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    inset: 0;
+    margin: auto;
+    transition: 0.5s all linear;
+    opacity: 0;
+    left: -230%;
+}
+.input:checked ~ .fakeinput::before {
+    opacity: 1;
+    background-color: rgb(56, 56, 255);
+    transform: scale(0.2);
+}
